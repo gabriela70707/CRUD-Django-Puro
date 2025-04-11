@@ -10,7 +10,7 @@ class PersonagemForm(forms.ModelForm):
         super(PersonagemForm, self).__init__(*args, **kwargs)
 
         if self.instance and self.instance.pk:
-            self.fields['cpf'].disabled = True
+            self.fields['CPF'].disabled = True
 
         
 

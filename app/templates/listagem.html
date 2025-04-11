@@ -26,7 +26,8 @@
             text-align: center;
             font-size: 2.5em;
             color: #4CAF50;
-            margin-bottom: 20px;
+            margin-bottom: 50px;
+            padding: 40px;
         }
 
         /* Estilo para a lista de personagens */
@@ -97,6 +98,8 @@
             cursor: pointer;
             width: 15%;
             font-size: 16px;
+            margin-left: 40px;
+            margin-top: 40px;
         }
 
         button:hover {
@@ -106,6 +109,19 @@
         a{
             text-decoration: none;
             color:#ddd;
+        }
+
+        .links{
+            display: flex;
+            gap: 10px;
+            padding: 25px;
+        }
+
+        .links a{
+            display: flex;
+            gap: 10px;
+            padding: 20px;
+            color: #918e8e;
         }
 
         .caption {
@@ -130,6 +146,11 @@
                     <div class="status {% if personagem.status %} status-ativo {% else %} status-inativo {% endif %}">
                         Status do Bruxo
                     </div>
+                    <div class="links">
+                        <a href="{% url 'deletar_bruxo' personagem.id %}">Deletar Personagem</a>
+                        <a href="{% url 'atualizar_bruxo' personagem.id %}">Atualizar Personagem</a>
+                    </div>
+                 
                 </li>
                 {% empty %} <!--Caso tenha uma lista vazia-->
                 <p class="caption">Nenhum bruxinho encontrado</p>
